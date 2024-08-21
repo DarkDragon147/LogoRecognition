@@ -1,0 +1,98 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Logo Detection - Result</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+        .container img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .container h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container h2 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .container label {
+            color: #555;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .container input[type="file"] {
+            display: block;
+            margin: 0 auto 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+        .container button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav"> 
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+    </div>
+    <div class="container">
+        <img src="{% static 'img2.jpg' %}" alt="Logo">
+        <h1>Fake Logo Detection</h1>
+        <h2>Prediction Result</h2>
+        <p>The logo is: <strong>{{ result }}</strong></p>
+        <img src="{{ file_url }}" alt="Uploaded Logo">
+        <br>
+        <a href="/">Upload another logo</a>
+    </div>
+</body>
+</html>
